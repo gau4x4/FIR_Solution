@@ -1,0 +1,47 @@
+<h1 mat-dialog-title class="modal-heading">Add Candidate</h1>
+<div mat-dialog-content>
+  <form [formGroup]="candidateForm" >
+    <mat-form-field class="modal-input-field">
+      <mat-label>Name</mat-label>
+      <input matInput type="text" formControlName="candidateName" required />
+    </mat-form-field>
+    <mat-form-field class="modal-input-field">
+      <mat-label>City</mat-label>
+      <input matInput type="text" formControlName="candidateLocation" required />
+    </mat-form-field>
+    <div class="gender">
+      <mat-radio-group
+        class="gender-radio-group"
+        formControlName="gender"
+        aria-label="Select an option"
+        required
+      >
+        <mat-label>Gender:</mat-label>
+        <mat-radio-button value="Male"  checked
+          >Male</mat-radio-button
+        >
+        <mat-radio-button value="Female" >Female</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <section class="skill-selection-section">
+      <mat-checkbox class="skill-checkbox" formControlName="cs" value="C#">C#</mat-checkbox>
+      <mat-checkbox class="skill-checkbox" formControlName="mvc" value="ASP.NET MVC">ASP.NET MVC</mat-checkbox>
+      <mat-checkbox class="skill-checkbox" formControlName="angjs" value="AngularJS" required>AngularJS</mat-checkbox>
+      <mat-checkbox class="skill-checkbox" formControlName="anglr" value="Angular 2/4/5">Angular 2/4/5</mat-checkbox>
+      <mat-checkbox class="skill-checkbox" formControlName="react" value="ReactJS">ReactJS</mat-checkbox>
+    </section>
+    <div mat-dialog-actions>
+      <button mat-raised-button (click)="dirtySubmit(candidateForm)" class="cancel-button">Cancel</button>
+      <button
+        mat-raised-button
+        class="save-button"
+        color="primary"
+        type="submit"
+        (click)="onSubmit(candidateForm)"
+      >
+        Save
+      </button>
+    </div>
+    
+  </form>
+</div>

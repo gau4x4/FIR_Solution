@@ -1,0 +1,34 @@
+<mat-card class="cand-card-box">
+  <mat-card-title>{{ detail?.name }}({{ detail?.gender }}) </mat-card-title>
+  <mat-card-subtitle>{{ detail?.location }}</mat-card-subtitle>
+  <mat-card-content class="cand-content-box">
+    <h2 class="progress-status">
+      Status: <span>{{ detail?.status }}</span>
+    </h2>
+    <mat-chip-list aria-label="Skills">
+      <mat-chip *ngFor="let skill of detail?.skills">{{ skill }}</mat-chip>
+    </mat-chip-list>
+  </mat-card-content>
+  <mat-card-footer class="cand-card-footer">
+    <button
+      mat-raised-button
+      color="primary"
+      (click)="selectCandidate(detail?.id)"
+      [disabled]="
+        (detail?.actions)[0] != 'select' || detail?.status == 'selected'
+      "
+    >
+      Select
+    </button>
+    <button
+      mat-raised-button
+      color="warn"
+      (click)="rejectCandidate(detail?.id)"
+      [disabled]="
+        (detail?.actions)[1] != 'reject' || detail?.status == 'rejected'
+      "
+    >
+      Reject
+    </button>
+  </mat-card-footer>
+</mat-card>

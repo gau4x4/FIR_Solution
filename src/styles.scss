@@ -1,0 +1,115 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  box-sizing: border-box;
+}
+
+.appMainHeader {
+  height: 70px;
+  width: 100%;
+  padding: 15px;
+  background-color: #3f51b5;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  .appHeading {
+    margin-bottom: 0;
+    color: #fff;
+  }
+  .selection-status {
+    background-color: #f3e508 !important;
+  }
+}
+.mainApp-container {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  .card-grid-box {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    .cand-card-box {
+      padding: 30px;
+      box-shadow: 0 0 5px 2px rgba(170, 170, 170, 0.2);
+      .mat-card-title {
+        font-weight: normal;
+      }
+      .mat-card-subtitle{
+        margin-top: 10px;
+      }
+      .cand-content-box {
+        .progress-status {
+          text-transform: capitalize;
+          font-weight: normal;
+        }
+        .mat-chip-list {
+          display: flex;
+          margin: 20px 0;
+          flex-wrap: wrap;
+        }
+      }
+      .cand-card-footer {
+        display: flex;
+        // margin: 0;
+        button {
+          width: 100px;
+          &:first-child {
+            margin-right: 10px;
+          }
+        }
+      }
+    }
+  }
+  .appUtilBox {
+    display: inline-flex;
+    margin-left: auto;
+  }
+  .candidate-search-field {
+    margin: 20px 10px 0 0;
+  }
+}
+.add-candidate-parent {
+  .mat-dialog-container {
+    padding-bottom: 0;
+  }
+  .modal-heading {
+    color: #3b5998;
+  }
+  .mat-dialog-content {
+    min-height: 335px;
+    .modal-input-field {
+      width: 100%;
+    }
+    .skill-checkbox {
+      margin: 10px 10px 10px 0;
+      display: inline-flex;
+      align-items: center;
+    }
+    .gender-radio-group {
+      margin: 10px 0;
+      display: flex;
+      align-items: center;
+      .mat-radio-button {
+        margin: 5px 10px 5px 5px;
+      }
+    }
+  }
+  .mat-dialog-actions {
+    float: right;
+    margin-top: 70px;
+    button {
+      width: 100px;
+    }
+  }
+}

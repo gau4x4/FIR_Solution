@@ -1,0 +1,21 @@
+<div class="mainApp-container">
+  <div class="appUtilBox">
+    <form class="example-form">
+      <mat-form-field class="candidate-search-field">
+        <mat-label>Search Candidate</mat-label>
+        <input matInput placeholder="Enter Name" (keyup)="searchCandidateHandler($event.target.value)" />
+      </mat-form-field>
+      <button
+        mat-mini-fab
+        color="primary"
+        aria-label="Add Candidate"
+        (click)="openAddCandidateDialog()"
+      >
+        <mat-icon>apps</mat-icon>
+      </button>
+    </form>
+  </div>
+  <div class="card-grid-box"  >
+    <app-cards *ngFor="let candidate of candidates" [detail]="candidate" (select)="onUpdateHandler($event)" (reject)="onUpdateHandler($event)"></app-cards>
+  </div>
+</div>

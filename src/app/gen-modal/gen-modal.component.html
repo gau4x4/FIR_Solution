@@ -1,0 +1,9 @@
+<h1 mat-dialog-title>Strict Warning</h1>
+<div mat-dialog-content>
+  <p>You Have unsaved data!!! Still want to closed?</p>
+</div>
+<div mat-dialog-actions>
+  <button mat-raised-button color="primary" (click)="onClose('no')">Leave</button>
+  <button mat-raised-button color="warn"  (click)="onClose('yes')" >Stay</button>
+</div>
+

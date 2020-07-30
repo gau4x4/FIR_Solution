@@ -1,0 +1,31 @@
+<mat-toolbar class="appMainHeader">
+  <h3 class="appHeading">My Candidate Work Book</h3>
+  <div class="appChipsContainer">
+    <mat-chip-list aria-label="Fish selection">
+      <mat-chip
+        >Total:{{
+          totalCandidate ==
+          (counterData[0] > 0 ? counterData[0] : totalCandidate)
+            ? totalCandidate
+            : counterData[0]
+        }}</mat-chip
+      >
+      <mat-chip class="selection-status" selected
+        >Selected:{{
+          selectedCandidate ==
+          (counterData[1] > 0 ? counterData[1] : selectedCandidate)
+            ? selectedCandidate
+            : counterData[1]
+        }}</mat-chip
+      >
+      <mat-chip class="selection-status" selected
+        >Rejected:{{
+          rejectedCandidate ==
+          (counterData[2] > 0 ? counterData[2] : rejectedCandidate)
+            ? rejectedCandidate
+            : counterData[2]
+        }}</mat-chip
+      >
+    </mat-chip-list>
+  </div>
+</mat-toolbar>
